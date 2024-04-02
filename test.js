@@ -41,8 +41,8 @@ DOSM.Utilities.CustomSort = function (property) {
       a[property].toLowerCase() < b[property].toLowerCase()
         ? -1
         : a[property].toLowerCase() > b[property].toLowerCase()
-        ? 1
-        : 0;
+          ? 1
+          : 0;
     return result * sortOrder;
   };
 };
