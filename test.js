@@ -1,3 +1,11 @@
+// This code snippet intentionally contains a vulnerability
+function unsafeFunction(userInput) {
+  eval(userInput); // Avoid using eval() in production code!
+}
+
+const maliciousInput = 'console.log("Hello from the dark side!");';
+unsafeFunction(maliciousInput);
+
 // #region gp_/js/dosm_DependentOptionSet.js
 // test security git gub run 01
 // #region DOSM.Namespaces
