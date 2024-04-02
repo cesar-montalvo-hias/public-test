@@ -6,6 +6,20 @@ function unsafeFunction(userInput) {
 const maliciousInput = 'console.log("Hello from the dark side!");';
 unsafeFunction(maliciousInput);
 
+var express = require('express');
+var app = express();
+
+app.post("/foo", (req, res) => {
+    var obj = req.body;
+
+    var ret = [];
+
+    // Potential DoS if obj.length is large.
+    for (var i = 0; i < obj.length; i++) {
+        ret.push(obj[i]);
+    }
+});
+
 // #region gp_/js/dosm_DependentOptionSet.js
 // test security git gub run 01
 // #region DOSM.Namespaces
